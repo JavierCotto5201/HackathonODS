@@ -4,6 +4,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { makeStyles } from '@mui/styles';
+import { Link } from "react-router-dom";
+import {Clases} from './Clases.js'
 const useStyles = makeStyles({
     page: {
         
@@ -11,48 +13,47 @@ const useStyles = makeStyles({
     
 })
 
-const cursos = ["Gráficas por Computadora", "Fisica 3", "Matemática Discreta"]
-
-function Curso(curso){
+function Curso({curso}){
     return (
         <div >
-            {
-                cursos.map(function(curso){
-                    return(
-                        <Card elevation={2}>
-                        <CardHeader
-                            title={curso}
-                            subheader={'Matematicas'}
-                            action={
-                                <IconButton>
-                                    <MoreVertIcon/>
-                                </IconButton>
-                                }
-                        />
-                        <CardContent>
-                            <Typography variant='body2' color='textSecondary'>
-                                Description: del curso
-                            </Typography>
-                            <Button onClick={() =>console.log('Boton')}>
-                                Ver Curso
-                            </Button>
-                        </CardContent>
-                    </Card>
-                    )
-                })
-            }
+            <Card elevation={2}>
+                <CardHeader
+                    title={curso.name}
+                    subheader={curso.departamento}
+                    action={
+                        <IconButton>
+                            <MoreVertIcon/>
+                        </IconButton>
+                        }
+                />
+                <CardContent>
+                    <Typography variant='body2' color='textSecondary'>
+                        {curso.descripcion}
+                    </Typography>
+                    <Link to={`/clase/${curso.id}`}>
+                        <Button onClick={() =>console.log('Boton')}>
+                            Ver Curso
+                        </Button>
+                    </Link>
+                </CardContent>
+            </Card>
         </div>
     )
 }
-
 function Cursos() {
     const classes = useStyles()
     return (
         <Container className={classes.page}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
+                {
+                    Clases.map(curso => {
+                        return (
+                            <Grid key={curso.id} item xs={12} md={6} lg={4}>
+                                <Curso curso={curso}/>
+                            </Grid>
+                        )
+                    })
+                }
             </Grid>
         </Container>
     )

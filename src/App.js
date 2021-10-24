@@ -13,7 +13,7 @@ import {
 const Home = () => {
   return (
     <div>
-      <SCurso />
+      <Curso />
     </div>
   )
 }
@@ -26,6 +26,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/clase/:id' component={SCurso} />
           {/**<Route path='/producto/:id' component={Producto} />
             <Route path='/editor/:id' component={Editor} />
             <Route path='/compra/:id' component={Compra} />**/}
