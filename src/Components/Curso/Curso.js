@@ -10,28 +10,37 @@ const useStyles = makeStyles({
     },
     
 })
+
+const cursos = ["Gráficas por Computadora", "Fisica 3", "Matemática Discreta"]
+
 function Curso(curso){
     return (
         <div >
-            <Card elevation={2}>
-                <CardHeader
-                    title={'Calculo 1'}
-                    subheader={'Matematicas'}
-                    action={
-                        <IconButton>
-                            <MoreVertIcon/>
-                        </IconButton>
-                        }
-                />
-                <CardContent>
-                    <Typography variant='body2' color='textSecondary'>
-                        Description: del curso
-                    </Typography>
-                    <Button onClick={() =>console.log('Boton')}>
-                        Ver Curso
-                    </Button>
-                </CardContent>
-            </Card>
+            {
+                cursos.map(function(curso){
+                    return(
+                        <Card elevation={2}>
+                        <CardHeader
+                            title={curso}
+                            subheader={'Matematicas'}
+                            action={
+                                <IconButton>
+                                    <MoreVertIcon/>
+                                </IconButton>
+                                }
+                        />
+                        <CardContent>
+                            <Typography variant='body2' color='textSecondary'>
+                                Description: del curso
+                            </Typography>
+                            <Button onClick={() =>console.log('Boton')}>
+                                Ver Curso
+                            </Button>
+                        </CardContent>
+                    </Card>
+                    )
+                })
+            }
         </div>
     )
 }
@@ -41,38 +50,6 @@ function Cursos() {
     return (
         <Container className={classes.page}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-
-
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-
-
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-
-
-                <Grid item xs={12} md={6} lg={4}>
-                    <Curso/>
-                </Grid>
-
-
-
                 <Grid item xs={12} md={6} lg={4}>
                     <Curso/>
                 </Grid>

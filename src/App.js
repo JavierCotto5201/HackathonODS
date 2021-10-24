@@ -1,5 +1,6 @@
 import Navbar from './Components/Navbar/Navbar.js'
 import Curso from './Components/Curso/Curso.js'
+import SCurso from './Components/Curso/SerieCurso.js'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -12,7 +13,7 @@ import {
 const Home = () => {
   return (
     <div>
-      <Curso />
+      <SCurso />
     </div>
   )
 }
