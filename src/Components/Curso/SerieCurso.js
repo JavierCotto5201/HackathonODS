@@ -28,28 +28,30 @@ const linksFis = ["https://youtu.be/PtUU7fnxRqo", "https://youtu.be/zu3wL2el5Lc"
 
 function Caps(){
     return(
-        <div>{
-            capitulosDis.map(function(Capitulos){
-                return(
-                    <Grid rowSpacing={4} >
-                        <Card sx={{ maxWidth: 300, maxHeight: 350}} elevation = {3}>
-                            <CardMedia
-                            component="img"
-                            height="140"
-                            image={imagen}
-                            alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                {Capitulos}
-                                </Typography>
-                            </CardContent>
-                            <Button variant="outlined">Ver Capitulo</Button>
-                        </Card>
-                    </Grid>
-                )
-            })
-        }</div>
+        <div>
+            <Grid container spacing={3} style={{marginTop: 10}}>{
+                capitulosDis.map(function(Capitulos){
+                    return(
+                            <Grid item xs={4}>
+                            <Card sx={{ maxWidth: 300, maxHeight: 350}}>
+                                <CardMedia
+                                component="img"
+                                height="140"
+                                image={imagen}
+                                alt="green iguana"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                    {Capitulos}
+                                    </Typography>
+                                </CardContent>
+                                <Button variant="outlined">Ver Capitulo</Button>
+                            </Card>
+                            </Grid>
+                    )
+                })
+            }</Grid>
+        </div>
     )
 }
 
