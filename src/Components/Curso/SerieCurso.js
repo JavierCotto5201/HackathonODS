@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import './Curso_style.css';
 import Typography from '@mui/material/Typography';
 import {Container, Grid} from '@mui/material';
 import imagen from './video.png'
@@ -32,8 +33,8 @@ function Caps(){
             <Grid container spacing={3} style={{marginTop: 10}}>{
                 capitulosDis.map(function(Capitulos){
                     return(
-                            <Grid item xs={4}>
-                            <Card sx={{ maxWidth: 300, maxHeight: 350}}>
+                        <Grid item xs={4}>
+                            <Card sx={{ width: 300, height: 350}} style={{backgroundColor: '#c9ffb0', alignItems: "center", justifyContent: "center", display: 'grid'}}>
                                 <CardMedia
                                 component="img"
                                 height="140"
@@ -45,9 +46,9 @@ function Caps(){
                                     {Capitulos}
                                     </Typography>
                                 </CardContent>
-                                <Button variant="outlined">Ver Capitulo</Button>
+                                <Button variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}} className="SeeVideoBtn">Ver Capitulo</Button>
                             </Card>
-                            </Grid>
+                        </Grid>
                     )
                 })
             }</Grid>

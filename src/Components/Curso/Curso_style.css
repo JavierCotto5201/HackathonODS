@@ -1,0 +1,8 @@
+.SeeClassBtn{
+    color: black;
+}
+
+.SeeClassBtn:hover{
+    background-color: #51a22b;
+    color: white;
+}

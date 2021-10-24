@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import CardMedia from '@mui/material/CardMedia';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import imagen from './EstudiantexEstudianteLogo.PNG';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -55,14 +57,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor: '#fafafa'}}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            style={{color: '#9c2828'}}
           >
             <MenuIcon />
           </IconButton>
@@ -74,17 +76,23 @@ export default function SearchAppBar() {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             <Link to='/'>
-              Estudiante X Estudiante
+              <CardMedia
+                component="img"
+                image={imagen}
+                alt="green iguana"
+                style = {{width: 150}}
+              />
             </Link>
           </Typography>
 
-          <Search>
+          <Search style={{backgroundColor: '#e8e8e8'}}>
             <SearchIconWrapper>
-              <SearchIcon />
+              <SearchIcon style={{color: '#9c2828'}}/>
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Buscar..."
               inputProps={{ 'aria-label': 'search' }}
+              style={{color: '#9c2828'}}
             />
           </Search>
         </Toolbar>
