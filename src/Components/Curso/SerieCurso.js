@@ -8,8 +8,16 @@ import './Curso_style.css';
 import Typography from '@mui/material/Typography';
 import {Container, Grid} from '@mui/material';
 import imagen from './video.png'
+import { useHistory } from 'react-router-dom';
 
 function Caps({episodios}){
+    const history = useHistory();
+    const handleClick = (data) => {
+        history.push({
+          pathname: `/temporada/${data.id}`,
+          state: data
+        });
+      }
     return(
         <div>
             {console.log(episodios)}
@@ -29,7 +37,7 @@ function Caps({episodios}){
                                     {episodio.cap}
                                     </Typography>
                                 </CardContent>
-                                <Button variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}} className="SeeVideoBtn">Ver Capitulo</Button>
+                                <Button  onClick={() =>handleClick(episodio)} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}} className="SeeVideoBtn">Ver Capitulo</Button>
                             </Card>
                         </Grid>
                     )

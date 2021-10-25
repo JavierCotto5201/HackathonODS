@@ -7,15 +7,18 @@ const Clases = [
         temporada:[
             {
                 cap:"Capitulo 1: Framebuffer",
-                link:'https://youtu.be/DnGe4AbpQQg'
+                link:'https://youtu.be/DnGe4AbpQQg',
+                id:1
             },
             {
                 cap:"Capitulo 2: Mapas de Bits",
-                link:'https://youtu.be/gwax1vtxaTM'
+                link:'https://youtu.be/gwax1vtxaTM',
+                id:2
             },
             {
                 cap:"Capitulo 3: Historia de los videojuegos",
-                link:'https://youtu.be/8XTPIY4BEL0'
+                link:'https://youtu.be/8XTPIY4BEL0',
+                id:3
             },
         ],
     },
