@@ -40,7 +40,7 @@ function Curso({curso}){
                         {curso.descripcion}
                     </Typography>
                     
-                        <Button onClick={() =>handleClick(curso)} className="SeeClassBtn">
+                        <Button onClick={() =>handleClick(curso.temporada)} className="SeeClassBtn">
                             Ver Curso
                         </Button>
                     
