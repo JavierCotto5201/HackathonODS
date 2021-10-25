@@ -11,6 +11,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import imagen from './EstudiantexEstudianteLogo.PNG';
+import { Container, Grid, Button ,Card} from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,16 +60,7 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor: '#fafafa'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            style={{color: '#9c2828'}}
-          >
-            <MenuIcon />
-          </IconButton>
-
+          
           <Typography
             variant="h6"
             noWrap
@@ -84,17 +76,11 @@ export default function SearchAppBar() {
               />
             </Link>
           </Typography>
-
-          <Search style={{backgroundColor: '#e8e8e8'}}>
-            <SearchIconWrapper>
-              <SearchIcon style={{color: '#9c2828'}}/>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Buscar..."
-              inputProps={{ 'aria-label': 'search' }}
-              style={{color: '#9c2828'}}
-            />
-          </Search>
+          <Link to='/apoyo'>
+            <Button sx={{ mr: 2 }} style={{color: '#9c2828'}}>
+              Material de Apoyo
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

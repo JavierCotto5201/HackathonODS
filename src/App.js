@@ -2,6 +2,7 @@ import Navbar from './Components/Navbar/Navbar.js'
 import Curso from './Components/Curso/Curso.js'
 import SCurso from './Components/Curso/SerieCurso.js'
 import Episodio from './Components/Curso/Episodio.js'
+import Apoyo from './Components/Curso/Apoyo.js'
 import ChoosePlan from './Components/WelcomePage/ChoosePlan.js'
 import './App.css';
 import {
@@ -29,6 +30,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/cursos' exact component={Curso} />
+          <Route path='/apoyo' exact component={Apoyo} />
           <Route path='/clase/:id' component={SCurso} />
           <Route path='/temporada/:id' component={Episodio} />
           {/**<Route path='/producto/:id' component={Producto} />
