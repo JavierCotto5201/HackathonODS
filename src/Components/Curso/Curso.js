@@ -7,6 +7,7 @@ import './Curso_style.css';
 import { makeStyles } from '@mui/styles';
 import { Link } from "react-router-dom";
 import {Clases} from './Clases.js'
+import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles({
     page: {
         
@@ -15,6 +16,13 @@ const useStyles = makeStyles({
 })
 
 function Curso({curso}){
+    const history = useHistory();
+    const handleClick = (data) => {
+        history.push({
+          pathname: `/clase/${curso.id}`,
+          state: data
+        });
+      }
     return (
         <div >
             <Card elevation={3} style={{backgroundColor: '#6acc3d', height: 300}}>
@@ -31,11 +39,11 @@ function Curso({curso}){
                     <Typography variant='body2' color='textSecondary'>
                         {curso.descripcion}
                     </Typography>
-                    <Link to={`/clase/${curso.id}`}>
-                        <Button onClick={() =>console.log('Boton')} className="SeeClassBtn">
+                    
+                        <Button onClick={() =>handleClick(curso)} className="SeeClassBtn">
                             Ver Curso
                         </Button>
-                    </Link>
+                    
                 </CardContent>
             </Card>
         </div>
