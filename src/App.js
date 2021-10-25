@@ -2,6 +2,7 @@ import Navbar from './Components/Navbar/Navbar.js'
 import Curso from './Components/Curso/Curso.js'
 import SCurso from './Components/Curso/SerieCurso.js'
 import Episodio from './Components/Curso/Episodio.js'
+import ChoosePlan from './Components/WelcomePage/ChoosePlan.js'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -14,7 +15,7 @@ import {
 const Home = () => {
   return (
     <div>
-      <Curso />
+      <ChoosePlan />
     </div>
   )
 }
