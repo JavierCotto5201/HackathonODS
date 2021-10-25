@@ -3,13 +3,25 @@ import { Grid, Button ,Card } from '@mui/material';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { useHistory } from 'react-router-dom';
-
+import { useState } from 'react';
 function Plans(){
+    const [user, setUser] = useState("");
     const history = useHistory();
-    const handleClick = () => {
-        history.push({
-          pathname: '/cursos',
-        });
+    const onChange0 = event => {
+        setUser( event.target.value );
+      }
+    const handleClick = (condition,user) => {
+        if(condition === false) {
+            history.push({
+                pathname: '/cursos4free',
+              });
+        }
+        if(condition === true) {
+            alert('Se le ha mandado un correo a: '+user)
+            history.push({
+                pathname: '/cursos',
+              });
+        }
       }
     return(
         <div>
@@ -28,7 +40,7 @@ function Plans(){
                                     <li> Visualizacion de cursos una carrera completa </li>
                                 </ul>
                             </CardContent>
-                            <Button onClick={() =>handleClick()} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}}>Seleccionar</Button>
+                            <Button onClick={() =>handleClick(false,false)} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}}>Seleccionar</Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
@@ -45,9 +57,11 @@ function Plans(){
                                     <li> Visualizacion de cursos una carrera completa </li>
                                 </ul>
                                 <text className="IngreseCorreo" style={{paddingLeft:100, color:'white'}}>Ingrese correo</text>
-                                <input style={{paddingLeft:100}}></input>
+                                <form>
+                                    <input value={user} onChange={onChange0} style={{paddingLeft:100}}></input>
+                                </form>
                             </CardContent>
-                            <Button onClick={() =>handleClick()} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20, borderColor:'white', color:'white'}}>Suscribirse</Button>
+                            <Button onClick={() =>handleClick(true,user)} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20, borderColor:'white', color:'white'}}>Suscribirse</Button>
                         </Card>
                     </Grid>                    
             </Grid>

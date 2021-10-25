@@ -42,7 +42,7 @@ function Apoyo(props) {
                         return (
                             <Grid key={curso.id} item xs={12} md={6} lg={4}>
                                 <p>
-                                   <a href={curso.link}>{curso.name}</a>
+                                    <a href={curso.link}>{curso.name}</a>
                                 </p>
                             </Grid>
                         )

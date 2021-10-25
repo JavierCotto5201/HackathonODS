@@ -1,5 +1,6 @@
 import Navbar from './Components/Navbar/Navbar.js'
 import Curso from './Components/Curso/Curso.js'
+import Curso4 from './Components/Curso/Curso4.js'
 import SCurso from './Components/Curso/SerieCurso.js'
 import Episodio from './Components/Curso/Episodio.js'
 import Apoyo from './Components/Curso/Apoyo.js'
@@ -30,6 +31,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/cursos' exact component={Curso} />
+          <Route path='/cursos4free' exact component={Curso4} />
           <Route path='/apoyo' exact component={Apoyo} />
           <Route path='/clase/:id' component={SCurso} />
           <Route path='/temporada/:id' component={Episodio} />

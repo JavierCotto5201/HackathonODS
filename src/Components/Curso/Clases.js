@@ -1,4 +1,4 @@
-const Clases = [
+let Clases = [
     {
         name:'Gráficas por Computadora',
         departamento:'Programacion',
