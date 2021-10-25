@@ -2,12 +2,18 @@ import React from 'react'
 import { Grid, Button ,Card } from '@mui/material';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function Plans(){
+    const history = useHistory();
+    const handleClick = () => {
+        history.push({
+          pathname: '/cursos',
+        });
+      }
     return(
         <div>
-            <Grid container spacing={3} style={{marginTop: 10, paddingLeft: 450, alignItems:'center', justifyItems:'center'}}>
+            <Grid container spacing={9} rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} style={{marginTop: 10, paddingLeft: 100, alignItems:'center', justifyItems:'center'}}>
                     <Grid item xs={4}>
                         <Card sx={{ width: 350, height: 350}} style={{backgroundColor: '#c9ffb0', 
                             alignItems: "center", justifyContent: "center", display: 'grid'}}>
@@ -22,7 +28,7 @@ function Plans(){
                                     <li> Visualizacion de cursos una carrera completa </li>
                                 </ul>
                             </CardContent>
-                            <Button variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}}>Seleccionar</Button>
+                            <Button onClick={() =>handleClick()} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20}}>Seleccionar</Button>
                         </Card>
                     </Grid>
                     <Grid item xs={4}>
@@ -41,7 +47,7 @@ function Plans(){
                                 <text className="IngreseCorreo" style={{paddingLeft:100, color:'white'}}>Ingrese correo</text>
                                 <input style={{paddingLeft:100}}></input>
                             </CardContent>
-                            <Button variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20, borderColor:'white', color:'white'}}>Suscribirse</Button>
+                            <Button onClick={() =>handleClick()} variant="outlined" style={{width: "75%", marginLeft: 35, marginBottom:20, borderColor:'white', color:'white'}}>Suscribirse</Button>
                         </Card>
                     </Grid>                    
             </Grid>

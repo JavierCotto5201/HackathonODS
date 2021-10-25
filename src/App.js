@@ -28,6 +28,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/cursos' exact component={Curso} />
           <Route path='/clase/:id' component={SCurso} />
           <Route path='/temporada/:id' component={Episodio} />
           {/**<Route path='/producto/:id' component={Producto} />

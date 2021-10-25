@@ -75,7 +75,7 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <Link to='/'>
+            <Link to='/cursos'>
               <CardMedia
                 component="img"
                 image={imagen}
